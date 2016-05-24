@@ -1,0 +1,151 @@
+\documentclass{master_thesis}
+
+%\setuniversityinfo{
+%	FirstLine={Національний університет},
+%	SecondLine={\invcommas{Києво-Могилянська Академія}},
+%	Faculty={Факультет інформатики},
+%	Department={Кафедра математики}
+%}
+
+\setthesisinfo{
+	StudentName={Борисенко Павло Борисович},
+	StudentNameGenitive={Борисенку Павлу Борисовичу},
+	StudentNameShort={Борисенко~П.~Б.},
+	StudentGender=M,
+	StudentGroup={КМ-41м},
+	ThesisTitle={Математична модель захворюваності та профілактики ВІЛ-інфекції серед наркозалежних осіб в Україні},
+	UDK={004.62:510.22:004.023},
+	Advisor={Сергій Миколайович Копичко},
+	AdvisorTitle={старший викладач},
+	AdvisorNameShort={Копичко~С.~М.},
+	Reviewer={РЕЦЕНЗЕНТ},
+	Consultant={Соловйов~С.~О.},
+	ConsultantChapter={Розділ 2. Математичні засади забезпечення анонімності нечітких груп респондентів},
+	ConsultantTitle={доцент, канд. біол. наук, доцент},
+	ConsultantDesignation={зі спеціальних питань},
+	ConsultantSecond={Товстий Хуєць},
+	ConsultantChapterSecond={Розділ \MakeUppercase{go fuck yourself}},
+	ConsultantTitleSecond={нігера},
+	ConsultantDesignationSecond={твоєї мамки},
+	Year={2016}
+	%DepartmentHead={Б.~В.~Олійник},
+	%Speciality={8.04030101 \invcommas{Прикладна математика}},
+	%NormControl={старший викладач Мальчиков~В.~В.}
+}
+
+\begin{document}
+\maketitlepage
+
+\assignment{
+	Order={\invcommas{21}~березня~2016~р.~\No~1187-c},
+	ApplicationDate={\invcommas{25}~червня~2016~р.},
+	Object={ОБ'ЄКТ},
+	Subject={ПРЕДМЕТ},
+	Contents={
+	\begin{itemize}
+		\item систематизувати існуючі методи забезпечення індивідуальної та групової анонімності статистичних даних, 
+		\item розробити модель нечіткої групи записів мікрофайлу, 
+		\item розробити евристичні методи розв’язання задачі забезпечення групової анонімності нечітких груп респондентів та реалізувати їх програмно, 
+		\item провести експериментальні дослідження з використанням первинних даних перепису населення
+	\end{itemize}
+	},
+	Graphics={ІЛЮСТРАТИВНИЙ МАТЕРІАЛ},
+	Publications={
+	\begin{itemize}
+		\item стаття \invcommas{Providing Group Anonymity in a Microfile with Linguistic Data};
+		\item тези \invcommas{Структурные особенности меметического алгоритма минимизации искажений при обеспечении групповой анонимности данных}
+	\end{itemize}
+	},
+	AssignmentDate={\invcommas{3}~листопада~2015~р.},
+	Calendar={
+	1 & Ґрунтовне ознайомлення з предметною областю & 15.12.2014 & \\
+	\hline
+	2 & Визначення структури магістерської дисертації; вивчення літератури, пошук додаткової літератури & 01.03.2015 & \\
+	\hline
+	3 & Робота над першим розділом магістерської дисертації & 15.05.2015 & \\
+	\hline
+	4 & Проведення наукового дослідження; робота над другим розділом магістерської дисертації & 15.10.2015 & \\
+	\hline
+	5 & Проведення наукового дослідження; робота над статтею за результатами наукового дослідження & 15.12.2015 & \\
+	\hline
+	6 & Робота над третім розділом магістерської дисертації; підготовка статті за результатами наукового дослідження; розроблення програмногозабезпечення & 01.03.2016 & \\
+	\hline
+	7 & Завершення роботи над основною частиною магістерської дисертації; робота над розділом з охорони праці & 15.05.2016 & \\
+	\hline
+	8 & Оформлення текстової і графічної частин магістерської дисертації & 25.05.2016 & \\
+	},
+	Year={2015}
+}
+
+
+\abstract[ukr]{
+	General={Дисертацію виконано на \total{page} аркушах, вона містить \total{appendnum} додатки та перелік посилань на використані джерела з 52 найменувань. У роботі наведено \total{figures} рисунки та \total{tables} таблицю.},
+	TopicRelevance={На сьогоднішній день у світі спостерігається суттєве зростання обсягів цифрової первинної (неагрегованої) інформації. Тому актуальною є тематика, пов'язана з забезпеченням анонімності даних про особу чи групу осіб. Методи анонімізації даних повинні забезпечувати таке перетворення даних, яке виключає витік чутливої інформації, але дозволяє зберегти достатній рівень корисності даних. Існуючі методи забезпечення анонімності даних можна розділити на два класи. Методи забезпечення індивідуальної анонімності спрямовані на досягнення анонімності даних про окремих респондентів, тобто їхньої властивості бути нерозрізненними серед даних про інших респондентів. Методи забезпечення групової анонімності забезпечують анонімність групи респондентів шляхом маскування розподілу інформації про неї. Оскільки в багатьох випадках належність респондента групі, інформацію про розподіл якої потрібно захистити, можна визначити тільки нечітко, актуальною є розробка методів забезпечення групової анонімності, що враховують нечіткість захищуваних даних.},
+	Goal={Метою дисертаційної роботи є розробка методів забезпечення групової анонімності статистичних даних із використанням нечіткої логіки.\\\indent Для досягнення вказаної мети було розв'язано такі задачі:
+\begin{itemize}
+	\item систематизувати існуючі методи забезпечення індивідуальної та групової анонімності статистичних даних;
+	\item розробити модель нечіткої групи записів мікрофайлу;
+	\item розробити евристичні методи розв'язання задачі забезпечення групової анонімності нечітких груп респондентів та реалізувати їх програмно;
+	\item провести експериментальні дослідження з використанням первинних даних перепису населення.
+\end{itemize}
+	},
+	Object={методи модифікації статистичних даних із метою забезпечення їхньої анонімності.},
+	Subject={застосування нечіткої логіки для забезпечення групової анонімності статистичних даних.},
+	Methods={методи нечіткої логіки (для розроблення моделі нечіткої групи); методи оптимізації (для розроблення методів розв’язання задачі забезпечення групової анонімності); методи теорії алгоритмів та програмування (для програмної реалізації розроблених алгоритмів); методи теорії ймовірності та математичної статистики (для проведення експериментів).},
+	Contribution={\begin{itemize}
+		\item уперше поставлено задачу забезпечення групової анонімності нечітких груп респондентів, яка, на відміну від існуючих, передбачає приховання чутливих властивостей не окремих респондентів, а їх груп, що дає можливість маскувати чутливі властивості розподілів інформації про групи осіб;
+		\item удосконалено методи забезпечення групової анонімності, які, на відміну від існуючих, враховують нечіткість статистичних даних, що дає змогу забезпечувати анонімність груп осіб у випадку вилучення з набору даних атрибутів, які однозначно визначають групу;
+		\item удосконалено евристичні стратегії модифікації мікрофайлу, які відрізняються від існучих тим, що працюють із нечіткими групами респондентів, що дає змогу одержувати модифіковані мікрофайли після забезпечення анонімності нечітких груп респондентів.
+	\end{itemize}
+	},
+	PracticalValue={Запропоновано методи, які може бути використано під час анонімізації даних, які потребують публікування, зокрема, результатів перепису населення. Розроблені методи, математичне й програмне забезпечення для анонімізації нечітких груп респондентів спрощують захист даних перед публікацією, сприяють забезпеченню належного рівня приватності розподілу інформації про нечіткі групи респондентів.},
+	Approbation={Основні положення й результати роботи представлено на Міжнародній науково-технічній конференції «Штучний інтелект. Інтелектуальні системи» (2012 р.) та 27-ій Британській національній конференції з баз даних «Data Security and Security Data» (2012 р.).},
+	Publications={Результати дисертації викладено в 5 наукових працях, у тому числі:
+\begin{itemize}
+	\item у 2 статтях у наукових журналах, включених до Переліку наукових фахових видань України з технічних наук;
+	\item у 3 публікаціях у працях і тезах доповідей міжнародних наукових конференцій (із них 2 одноосібні).
+\end{itemize}
+	},
+	Keywords={мікрофайл, групова анонімність, нечітка логіка, система нечіткого виведення, вейвлет-перетворення.}
+}
+
+
+\abstract[eng]{
+	General={The thesis is presented in 32 pages. It contains 3 appendixes and bibliography of 52 references. Two figures and 1 table are given in the thesis.},
+	TopicRelevance={Nowadays, more and more digital primary (non-aggregated) data emerge in the world. Therefore, research concerning providing anonymity of data about a person or a group of people is topical. Data anonymity methods have to provide such data transformation that prevents sensitive information leakage, and at the same time enables preserving sufficient level of data utility. Existent methods for providing data anonymity may be divided into two classes. Methods for providing individual anonymity aim at achieving anonymity of data about standalone respondents, i. e. their property of being unidentifiable within the data about other respondents. Methods for providing group anonymity provide anonymity of a respondent group by masking the distribution of corresponding information. In many cases it is possible to define a respondent’s membership in a group whose distribution is to be protected only in a fuzzy way. Therefore, developing the methods for providing group anonymity that utilize fuzziness of the data under protection is a topical branch of research.},
+	Goal={The goal of this thesis is to develop methods for providing statistical data group anonymity using fuzzy logic.\\\indent 
+To accomplish this goal, the following objectives were reached:
+\begin{itemize}
+	\item systematize existent methods for providing statistical data individual and group anonymity;
+	\item develop a model of a fuzzy group of microfile records;
+	\item develop heuristic methods for solving the task of providing group anonymity of fuzzy respondent groups, implement them;
+	\item carry out experiments using primary census data.
+\end{itemize}
+	},
+	Object={methods for statistical data modification in order to provide their anonymity.},
+	Subject={applying fuzzy logic to providing statistical data group anonymity.},
+	Methods={methods of fuzzy logic (for developing a model of a fuzzy group); methods of optimization (for developing methods for solving the task of providing group anonymity); methods of the theory of algorithms and programming (for implementing the developed algorithms); methods of probability theory and mathematical statistics (for carrying out experiments).},
+	Contribution={\begin{itemize}
+		\item for the first time, the task of providing group anonymity of fuzzy respondent groups is set, which differs from the existing ones in that it implies masking sensitive features not of single individuals but of groups thereof, which enables us to mask sensitive features of distributions of information about groups of respondents;
+		\item methods for providing group anonymity are enhanced, which differ from the existing ones in that they take into account fuzziness of statistical data, which enables us to provide anonymity for groups of individuals, when attributes uniquely identifying the group are removed from the dataset;
+		\item heuristic strategies for microfile modification are enhanced, which differ from the existing ones in that they work with fuzzy groups of respondents, which enables us to obtain modified microfiles after having provided anonymity of fuzzy groups of respondents.
+	\end{itemize}
+	},
+	PracticalValue={Methods are proposed that can be applied while anonymizing the data to be published, in particular, population census results. The developed methods, mathematical approaches and software for anonymizing fuzzy respondent groups simplify protecting the data before their publishing, favor providing sufficient privacy level for the distribution of information on fuzzy respondent groups.},
+	Approbation={Basic ideas and results of the research were presented at the International scientific and technical conference “Artificial Intelligence. Intelligent systems” (2012), and at the 27th British National Conference on Databases “Data Security and Security Data” (2012).},
+	Publications={Thesis results are published in 5 scientific works:
+\begin{itemize}
+	\item in 2 papers in scientific journals included in the List of Professional Scientific Journals of Ukraine (technical sciences);
+	\item in 3 papers in proceedings of international scientific conferences (2 of them personally).
+\end{itemize}
+	},
+	Keywords={microfile, group anonymity, fuzzy logic, fuzzy inference system, wavelet transforms.}
+}
+
+\tableofcontents
+
+\shortings
+
+\intro
+
+\end{document}
