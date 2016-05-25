@@ -2,6 +2,82 @@
 % *****************  до магістерської дисертації ***************
 % ***** автори: Тавров Д. Ю., Борисенко П. Б., Дутчак І. О. ****
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Список доступних команд ---
+
+% --- Глобальні параметри дисертації ---
+%\setthesisinfo{params}, де params --- це розділені комами пари "параметр={значення}"
+% StudentName --- ПІБ студента
+% StudentNameGenitive --- TODO
+% StudentNameShort --- прізвище та ініціали студента
+% StudentMale --- стать студента (одне з: m,male,ч,м,f,female,ж)
+% StudentGroup --- група студента
+% ThesisTitle --- тема дисертації (без лапок)
+% UDK --- УДК
+% AdvisorName --- ПІБ наукового керівника
+% AdvisorNameShort --- прізвище та ініціали наукового керівника
+% AdvisorTitle --- посада, науковий ступінь, вчене звання наукового керівника
+% Reviewer --- посада, науковий ступінь, вчене звання, прізвище, ініціали рецензента
+% ConsultantChapter --- назва розділу, який консультував консультант
+% Consultant --- посада, науковий ступінь, вчене звання, прізвище, ініціали консультанта
+% ConsultantChapterSecond --- назва розділу, який консультував другий консультант
+% ConsultantSecond --- посада, науковий ступінь, вчене звання, прізвище, ініціали другого консультанта
+% Year --- рік захисту магістерської дисертації
+
+% --- Титульна сторінка ---
+% \maketitlepage
+
+% --- Команда для побудови завдання ---
+% \assignment{params}, де params --- це розділені комами пари "параметр={значення}"
+%	Order --- дата та номер наказу
+%	ApplicationDate --- 2. Термін подання студентом дисертації
+%	Object --- 3. Об'єкт дослідження
+%	Subject --- 4. Предмет дослідження
+%	Contents --- 5. Перелік завдань, які потрібно розробити 
+%	Graphics --- 6. Орієнтовний перелік ілюстративного матеріалу 
+%	Publications --- 7. Орієнтовний перелік публікацій
+% 8. Консультанти розділів проекту
+% ConsultantChapter --- назва розділу, який консультував консультант
+% Consultant --- прізвише, ініціали та посада консультанта
+% ConsultantChapterSecond --- назва розділу, який консультував другий консультант
+% ConsultantSecond --- прізвише, ініціали та посада другого консультанта
+%	AssignmentDate --- 8(9). Дата видачі завдання
+%	Calendar --- внутрішня частина таблиці з календарним планом
+% кожний рядок таблиці повинен мати формат:
+% #1 & #2 & #3 & \\
+% де #1 --- номер з/п
+% #2 --- назва завдання
+% #3 --- термін виконання завдання
+% після кожного рядка, окрім останнього, потрібно на окремому рядку
+% залишати \hline
+% Year --- рік затвердження завдання
+
+% --- Команда для реферата ---
+% \abstract[lang]{params}, де lang - мова реферата, наприклад urk або eng,  params --- розділені комами пари "параметр={значення}"
+% General --- загальна інформація про роботу
+% TopicRelevance --- Актуальність теми
+% Goal --- Мета і задачі дослідження
+% Object --- Об'єкт дослідження
+% Subject --- Предмет дослідження
+% Methods --- Методи дослідження
+% Contribution --- Наукова новизна
+% PracticalValue --- Практичне значення
+% Approbation --- Апробація
+% Publications --- Публікації
+% Keywords --- Ключові слова
+
+% --- Зміст ---
+% \tableofcontents
+
+% --- Перелік умовних позначень ---
+% \shortings
+
+% --- Зміст ---
+% \intro
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 % 1. Ідентифікуємо клас
 \ProvidesClass{master_thesis}[2015/12/10 v3.1 Клас для написання пояснювальної записки]
 \NeedsTeXFormat{LaTeX2e} % потрібний формат
@@ -14,7 +90,7 @@
 % мовні пакети
 \RequirePackage{cmap}% для кодування шрифтів у pdf
 \RequirePackage[T2A]{fontenc} % пакет для підтримки кирилічних шрифтів
-\RequirePackage[utf8]{inputenc} % пакет для підтримкм Windows'івського кодування cp1251
+\RequirePackage[utf8]{inputenc} % пакет для підтримкм UTF8
 \RequirePackage[russian,ukrainian]{babel} % пакет для підтримки української та російської мов
 \RequirePackage{pscyr} % пакет із гарними кирилічними шрифтами
 \RequirePackage{mathtext} % потрібні символи в режимі математичних формул
@@ -366,19 +442,6 @@
 	Department={Кафедра прикладної математики}
 }{}
 \newcommand{\setuniversityinfo}[1]{\setkeys[Thesis]{University}{#1}}
-% \maketitlepage{params}, де params --- це розділені комами пари "параметр={значення}"
-% StudentName --- ПІБ студента
-% StudentMale --- стать студента (true, якщо чоловік, false --- якщо жінка)
-% StudentGroup --- група студента
-% ThesisTitle --- тема дисертації (без лапок)
-% UDK --- УДК
-% Advisor --- посада, науковий ступінь, вчене звання, прізвище, ініціали наукового керівника
-% Reviewer --- посада, науковий ступінь, вчене звання, прізвище, ініціали рецензента
-% ConsultantChapter --- назва розділу, який консультував консультант
-% Consultant --- посада, науковий ступінь, вчене звання, прізвище, ініціали консультанта
-% ConsultantChapterSecond --- назва розділу, який консультував другий консультант
-% ConsultantSecond --- посада, науковий ступінь, вчене звання, прізвище, ініціали другого консультанта
-% Year --- рік захисту магістерської дисертації
 \define@cmdkey[Thesis]{Global}{StudentName}{}
 \define@cmdkey[Thesis]{Global}{StudentNameGenitive}{}
 \define@cmdkey[Thesis]{Global}{StudentNameShort}{}
@@ -391,9 +454,9 @@
 \define@cmdkey[Thesis]{Global}{StudentGroup}{}
 \define@cmdkey[Thesis]{Global}{ThesisTitle}{}
 \define@cmdkey[Thesis]{Global}{UDK}{}
-\define@cmdkey[Thesis]{Global}{Advisor}{}
-\define@cmdkey[Thesis]{Global}{AdvisorTitle}{}
+\define@cmdkey[Thesis]{Global}{AdvisorName}{}
 \define@cmdkey[Thesis]{Global}{AdvisorNameShort}{}
+\define@cmdkey[Thesis]{Global}{AdvisorTitle}{}
 \define@cmdkey[Thesis]{Global}{Reviewer}{}
 \define@cmdkey[Thesis]{Global}{Consultant}{}
 \define@cmdkey[Thesis]{Global}{ConsultantTitle}{}
@@ -511,37 +574,7 @@
 		\setcounter{page}{2} % номер сторінки буде 2
 }
 \makeatother
-		
-% нова команда для побудови завдання
-% \assignment{params}, де params --- це розділені комами пари "параметр={значення}"
-%	StudentName --- ПІБ студента в родовому відмінку
-%	StudentMale --- стать студента (true, якщо чоловік, false --- якщо жінка)
-%	ThesisTitle --- тема дисертації (без лапок)
-%	Advisor --- ПІБ, науковий ступінь, вчене звання наукового керівника
-%	Order --- дата та номер наказу
-%	ApplicationDate --- 2. Термін подання студентом дисертації
-%	Object --- 3. Об'єкт дослідження
-%	Subject --- 4. Предмет дослідження
-%	Contents --- 5. Перелік завдань, які потрібно розробити 
-%	Graphics --- 6. Орієнтовний перелік ілюстративного матеріалу 
-%	Publications --- 7. Орієнтовний перелік публікацій
-% 8. Консультанти розділів проекту
-% ConsultantChapter --- назва розділу, який консультував консультант
-% Consultant --- прізвише, ініціали та посада консультанта
-% ConsultantChapterSecond --- назва розділу, який консультував другий консультант
-% ConsultantSecond --- прізвише, ініціали та посада другого консультанта
-%	AssignmentDate --- 8(9). Дата видачі завдання
-%	Calendar --- внутрішня частина таблиці з календарним планом
-% кожний рядок таблиці повинен мати формат:
-% #1 & #2 & #3 & \\
-% де #1 --- номер з/п
-% #2 --- назва завдання
-% #3 --- термін виконання завдання
-% після кожного рядка, окрім останнього, потрібно на окремому рядку
-% залишати \hline
-%	StudentNameShort --- ініціали та прізвище студента 
-%	AdvisorNameShort --- ініціали та прізвище наукового керівника
-% Year --- рік затвердження завдання
+
 \makeatletter
 \define@cmdkey[Thesis]{Assignment}{StudentName}{}
 \define@cmdkey[Thesis]{Assignment}{Advisor}{}
@@ -562,7 +595,7 @@
 {
 	StudentName=\cmdThesis@Global@StudentNameGenitive,
 	ThesisTitle=\cmdThesis@Global@ThesisTitle,
-	Advisor={\cmdThesis@Global@Advisor\ \cmdThesis@Global@AdvisorTitle},
+	Advisor={\cmdThesis@Global@AdvisorName\ \cmdThesis@Global@AdvisorTitle},
 	StudentNameShort=\cmdThesis@Global@StudentNameShort,
 	AdvisorNameShort=\cmdThesis@Global@AdvisorNameShort,
 	Year=\cmdThesis@Global@Year
@@ -720,19 +753,6 @@
 }
 \makeatother
 
-% команда для реферата українською мовою
-% \abstractUkr{params}, де params --- це розділені комами пари "параметр={значення}"
-% General --- загальна інформація про роботу
-% TopicRelevance --- Актуальність теми
-% Goal --- Мета і задачі дослідження
-% Object --- Об'єкт дослідження
-% Subject --- Предмет дослідження
-% Methods --- Методи дослідження
-% Contribution --- Наукова новизна
-% PracticalValue --- Практичне значення
-% Approbation --- Апробація
-% Publications --- Публікації
-% Keywords --- Ключові слова
 \makeatletter
 \define@cmdkey[Thesis]{Abstract}{General}{}
 \define@cmdkey[Thesis]{Abstract}{TopicRelevance}{}
