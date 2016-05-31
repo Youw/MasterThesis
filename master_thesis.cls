@@ -56,6 +56,8 @@
 % \abstract[lang]{params}, де lang - мова реферата, наприклад urk або eng,  params --- розділені комами пари "параметр={значення}"
 % General --- загальна інформація про роботу
 % TopicRelevance --- Актуальність теми
+% ConnectionsUkr --- Optional-has default value: Зв'язок роботи з науковими програмами, планами, темами
+% ConnectionsEng --- Optional-has default value: англійська версія того ж
 % Goal --- Мета і задачі дослідження
 % Object --- Об'єкт дослідження
 % Subject --- Предмет дослідження
@@ -74,6 +76,9 @@
 
 % --- Зміст ---
 % \intro
+
+% --- Висновки --- 
+% \conclusions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -756,6 +761,8 @@
 \makeatletter
 \define@cmdkey[Thesis]{Abstract}{General}{}
 \define@cmdkey[Thesis]{Abstract}{TopicRelevance}{}
+\define@cmdkey[Thesis]{Abstract}{ConnectionsUkr}{}
+\define@cmdkey[Thesis]{Abstract}{ConnectionsEng}{}
 \define@cmdkey[Thesis]{Abstract}{Goal}{}
 \define@cmdkey[Thesis]{Abstract}{Object}{}
 \define@cmdkey[Thesis]{Abstract}{Subject}{}
@@ -765,6 +772,12 @@
 \define@cmdkey[Thesis]{Abstract}{Approbation}{}
 \define@cmdkey[Thesis]{Abstract}{Publications}{}
 \define@cmdkey[Thesis]{Abstract}{Keywords}{}
+\presetkeys[Thesis]{Abstract}
+{
+	ConnectionsUkr={Дисертаційна робота виконувалась згідно з планом науково-дослідних робіт кафедри прикладної математики Національного технічного університету України \invcommas{Київський політехнічний інститут}.},
+	ConnectionsEng={The thesis was prepared according to the scientific research plan of the Applied Mathematics Department of the National Technical University of Ukraine ``Kyiv Polytechnic Institute''.}
+}{}
+
 \renewcommand{\abstract}[2][]{
 	\ifstrempty{#1}{#2}{
 	\setkeys[Thesis]{Abstract}{#2}
@@ -778,7 +791,7 @@
 		
 		\textbf{Актуальність теми.} \cmdThesis@Abstract@TopicRelevance
 		
-		\textbf{Зв'язок роботи з науковими програмами, планами, темами.} Дисертаційна робота виконувалась згідно з планом науково-дослідних робіт кафедри прикладної математики Національного технічного університету України \invcommas{Київський політехнічний інститут}.
+		\textbf{Зв'язок роботи з науковими програмами, планами, темами.} \cmdThesis@Abstract@ConnectionsUkr
 		
 		\textbf{Мета і задачі дослідження.} \cmdThesis@Abstract@Goal
 		
@@ -808,7 +821,7 @@
 		
 		\textbf{Topic relevance.} \cmdThesis@Abstract@TopicRelevance
 		
-		\textbf{Thesis connection to scientific programs, plans, and topics.} The thesis was prepared according to the scientific research plan of the Applied Mathematics Department of the National Technical University of Ukraine ``Kyiv Polytechnic Institute.''
+		\textbf{Thesis connection to scientific programs, plans, and topics.} \cmdThesis@Abstract@ConnectionsEng
 				
 		\textbf{Research goal and objectives.} \cmdThesis@Abstract@Goal
 		
