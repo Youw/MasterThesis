@@ -79,6 +79,11 @@
 % --- Висновки --- 
 % \conclusions
 
+% --- Список використаної літератури
+% \begin{thebibliography}
+%    \bibitem{bibl_name_here} bibl_text_here
+% \end{thebibliography}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
