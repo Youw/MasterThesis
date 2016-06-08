@@ -151,6 +151,8 @@
 % пакет для кодів програм
 \RequirePackage{verbatim}
 
+\RequirePackage{lscape}
+
 
 % 4. Основна частина
 \frenchspacing
@@ -216,11 +218,11 @@
 \newcounter{pages}\@ifpackageloaded{totcount}{\regtotcounter{pages}}{}
 \newcounter{appendnum}\@ifpackageloaded{totcount}{\regtotcounter{appendnum}}{}
 \newcommand{\append}[1]{
-%\setcounter{chapter}{0}
-%\setcounter{figure}{0}
-%\setcounter{table}{0}
-%\setcounter{section}{0}
-%\setcounter{subsection}{0}
+\setcounter{chapter}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
 \titleformat{\chapter}{\centering\normalsize}{\hspace{1cm}\thechapter}{0.5em}{}
 \chapter*{Додаток \Asbuk{appendnum}\\#1}
 \addcontentsline{toc}{chapter}{Додаток \Asbuk{appendnum}\ #1}
@@ -228,6 +230,7 @@
 \preto\section{%
 	\ifnum\value{section}=0\addvspace{0pt}\fi%
 }
+\renewcommand{\theappendnum}{\Asbuk{appendnum}}
 \renewcommand{\thefigure}{\Asbuk{appendnum}.\arabic{figure}}
 \renewcommand{\thetable}{\Asbuk{appendnum}.\arabic{table}}
 \renewcommand{\thesection}{\Asbuk{appendnum}.\arabic{section}}
@@ -235,7 +238,7 @@
 }
 % прибираємо недопустимі букви з позначення додатків
 \pretocmd\append{
-	\stepcounter{appendnum}
+	\refstepcounter{appendnum}
 	\ifnum\Asbuk{appendnum}=Ґ \stepcounter{appendnum}\fi
 	\ifnum\Asbuk{appendnum}=Є \stepcounter{appendnum}\fi
 	\ifnum\Asbuk{appendnum}=З \stepcounter{appendnum}\fi
@@ -385,6 +388,9 @@
 
 % нове оточення для довгих таблиць
 \renewenvironment{table}[4]{
+\setlength{\LTpre}{-14pt}
+\setlength{\LTpost}{14pt}
+\setlength{\LTcapwidth}{0pt}
 	\begingroup\centering
 	\begin{longtable}{#1}
 		\kill
@@ -402,9 +408,6 @@
 	\end{longtable}
 	\endgroup
 }
-\setlength{\LTpre}{-14pt}
-\setlength{\LTpost}{14pt}
-\setlength{\LTcapwidth}{0pt}
 
 % наведемо порядок із відступами в бібліографії
 \patchcmd{\thebibliography}
@@ -511,7 +514,7 @@
 			{\renewcommand{\arraystretch}{0.8}
 		  \begin{tabular}{>{\raggedright}p{10cm}l}
 				\invcommas{На правах рукопису} & \invcommas{До захисту допущено} \\
-				УДК \cmdThesis@Global@UDK & Завідувач кафедри\\
+				\multirow{3}{*}{\parbox{8cm}{УДК \cmdThesis@Global@UDK} & Завідувач кафедри\\
 				& \_\_\_\_\_\_\_\_\_\_\_\_\_~\cmdThesis@Global@DepartmentHead \\
 				& \invcommas{\_\_\_\_}~\_\_\_\_\_\_\_\_\_\_\_\_\_~\cmdThesis@Global@Year\ р. \\
 			\end{tabular}}
@@ -706,7 +709,7 @@
 		\addvspace{14pt}
 
 		\begingroup\centering
-			Календарний план \break
+			Календарний план
 
 			\setfontsize{12}
 
