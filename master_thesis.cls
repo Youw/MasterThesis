@@ -659,9 +659,7 @@
 		\endgroup
 
 		1.~Тема дисертації: \invcommas{\cmdThesis@Assignment@ThesisTitle},
-
 		науковий керівник дисертації \cmdThesis@Assignment@Advisor,
-
 		затверджені наказом по університету від \cmdThesis@Assignment@Order.
 
 		2.~Термін подання \ifThesis@Global@StudentMale
@@ -708,7 +706,7 @@
 		\addvspace{14pt}
 
 		\begingroup\centering
-			Календарний план
+			Календарний план \break
 
 			\setfontsize{12}
 
