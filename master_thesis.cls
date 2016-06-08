@@ -514,7 +514,7 @@
 			{\renewcommand{\arraystretch}{0.8}
 		  \begin{tabular}{>{\raggedright}p{10cm}l}
 				\invcommas{На правах рукопису} & \invcommas{До захисту допущено} \\
-				\multirow{3}{*}{\parbox{8cm}{УДК \cmdThesis@Global@UDK} & Завідувач кафедри\\
+				\multirow{3}{*}{\parbox{8cm}{УДК \cmdThesis@Global@UDK}} & Завідувач кафедри\\
 				& \_\_\_\_\_\_\_\_\_\_\_\_\_~\cmdThesis@Global@DepartmentHead \\
 				& \invcommas{\_\_\_\_}~\_\_\_\_\_\_\_\_\_\_\_\_\_~\cmdThesis@Global@Year\ р. \\
 			\end{tabular}}
