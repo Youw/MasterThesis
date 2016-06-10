@@ -230,14 +230,14 @@
 \preto\section{%
 	\ifnum\value{section}=0\addvspace{0pt}\fi%
 }
+}
+% прибираємо недопустимі букви з позначення додатків
+\pretocmd\append{
 \renewcommand{\theappendnum}{\Asbuk{appendnum}}
 \renewcommand{\thefigure}{\Asbuk{appendnum}.\arabic{figure}}
 \renewcommand{\thetable}{\Asbuk{appendnum}.\arabic{table}}
 \renewcommand{\thesection}{\Asbuk{appendnum}.\arabic{section}}
 \renewcommand{\thesubsection}{\Asbuk{appendnum}.\arabic{section}.\arabic{subsection}}
-}
-% прибираємо недопустимі букви з позначення додатків
-\pretocmd\append{
 	\refstepcounter{appendnum}
 	\ifnum\Asbuk{appendnum}=Ґ \stepcounter{appendnum}\fi
 	\ifnum\Asbuk{appendnum}=Є \stepcounter{appendnum}\fi
